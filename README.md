@@ -50,7 +50,7 @@ To run tests, run the following command
 ## Generate Coverage Reports
 
 ```bash
-npm run test -- --coverage
+npm run test-coverage
 ```
 
 ## Environment Variables
