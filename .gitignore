@@ -1,0 +1,5 @@
+.env
+node_modules
+.vscode
+coverage
+.gitignoregit remote add origin [copied web address]
