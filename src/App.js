@@ -1,9 +1,41 @@
-import logo from './logo.svg';
+import { Col, Container, Row } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
 import './App.css';
+import PeriodFilter from './components/PeriodFilter';
+import ArticlesContainer from './container/Articles';
+
 
 function App() {
+  const [period, setPeriod] = useState('1');
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    async function getArticles() {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_BASE_URL}/${period}.json?api-key=${process.env.REACT_APP_API_KEY}`
+        );
+        const json = await response.json();
+        setArticles(json.results);
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getArticles()
+  }, [period])
   return (
-    <>dd</>
+    <Container>
+      <Row className='p-5'>
+        <Col xs={9} className='title'>The New York Times</Col>
+        <Col xs={3}>
+          <PeriodFilter setPeriod={setPeriod} />
+        </Col>
+      </Row>
+      <ArticlesContainer articles={articles} loading={loading} />
+    </Container>
   );
 }
 

@@ -1,7 +1,7 @@
 import { render, fireEvent } from '@testing-library/react';
 import PeriodFilter from './index';
 
-describe('Period Testing', () => {
+describe('Period Filter Testing', () => {
     test('select box for period exits in the document', () => {
         const component = render(<PeriodFilter />)
         const selectBoxElement = component.getByLabelText('Select period');
