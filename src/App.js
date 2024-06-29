@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import PeriodFilter from './components/PeriodFilter';
 import ArticlesContainer from './container/Articles';
+import { getPopularArticles } from './services';
 
 
 function App() {
@@ -13,9 +14,7 @@ function App() {
     async function getArticles() {
       setLoading(true);
       try {
-        const response = await fetch(
-          `${process.env.REACT_APP_BASE_URL}/${period}.json?api-key=${process.env.REACT_APP_API_KEY}`
-        );
+        const response = await getPopularArticles(period);
         const json = await response.json();
         setArticles(json.results);
       } catch (e) {
