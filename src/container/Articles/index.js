@@ -5,7 +5,7 @@ import Loader from './components/Loader'
 
 export default function ArticlesContainer({ articles, loading }) {
     return (
-        <Container>
+        <Container data-testid="articles-container">
             {loading ? <Loader /> : articles?.map((article) => <Article key={article?.id} article={article} />)}
         </Container>
 

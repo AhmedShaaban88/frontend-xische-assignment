@@ -45,5 +45,4 @@ describe('Article Figure Testing', () => {
         const captionElement = component.getByAltText("image");
         expect(captionElement).toBeInTheDocument();
     });
-
 })

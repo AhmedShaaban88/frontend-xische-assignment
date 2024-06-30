@@ -1,6 +1,5 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
-import './App.css';
 import PeriodFilter from './components/PeriodFilter';
 import ArticlesContainer from './container/Articles';
 import { getPopularArticles } from './services';

@@ -1,7 +1,8 @@
+import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-import React, { useEffect, useState } from 'react'
-import { Figure } from 'react-bootstrap'
-import './index.css'
+import { Figure } from 'react-bootstrap';
+import './index.css';
+
 function ArticleFigure({ images, caption, byline, source, lastUpdated }) {
     const [image, setImage] = useState({});
     const getImage = () => {

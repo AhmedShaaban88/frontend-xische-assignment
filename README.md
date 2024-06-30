@@ -53,6 +53,14 @@ To run tests, run the following command
 npm run test-coverage
 ```
 
+## Running E2E Tests
+
+To run e2e tests, run the following command
+
+```bash
+  npm run cy:open
+```
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file

@@ -20,4 +20,10 @@ describe('Article Testing', () => {
         const titleElement = component.getByText(/test title/i);
         expect(titleElement).toHaveAttribute('href', 'www.google.com');
     });
+    test('if media is send with empty array will not shown at all', () => {
+        const props = { article: { media: [] } }
+        const component = render(<Article {...props} />);
+        const mediaElement = component.getByTestId("media-container");
+        expect(mediaElement).toBeEmptyDOMElement();
+    });
 })
